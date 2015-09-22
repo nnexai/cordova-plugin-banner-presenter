@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-banner-presenter" version="0.0.1">
+  <name>BannerPresenter</name>
+  <description>Cordova Banner Presenter Plugin</description>
+  <license>Apache 2.0</license>
+  <keywords>cordova,device</keywords>
+  <js-module src="www/banner.js" name="banner">
+    <clobbers target="banner" />
+  </js-module>
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="BannerPresenter">
+        <param name="ios-package" value="CDVBannerPresenter"/>
+      </feature>
+    </config-file>
+    <header-file src="src/ios/CDVBannerPresenter.h" />
+    <source-file src="src/ios/CDVBannerPresenter.m" />
+  </platform>
+</plugin>
